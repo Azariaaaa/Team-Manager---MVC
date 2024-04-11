@@ -1,0 +1,45 @@
+﻿@using FootballClub.Database
+@model PlayerDTO
+@{
+    DatabaseContext database = new DatabaseContext();
+    List<Team> teams = database.Teams.ToList();
+}
+@{
+}
+<div class="form-sizing border rounded p-3">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="playerFirstname" class="form-label">Player firstname</label>
+            <input class="form-control" type="text" asp-for="Firstname">
+            <span asp-validation-for="Firstname" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="playerLastname" class="form-label">Player Lastname</label>
+            <input class="form-control" type="text" asp-for="Lastname">
+            <span asp-validation-for="Lastname" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="playerNumber" class="form-label">Player number</label>
+            <input class="form-control" type="text" asp-for="Number">
+            <span asp-validation-for="Number" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="playerRole" class="form-label">Player role</label>
+            <input class="form-control" type="text" asp-for="Role">
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="playerTeam" class="form-label">Player team</label>
+            <select class=" form-select" asp-for="Team">
+                @foreach(Team team in teams)
+                {
+                    <option value='@team.Name'>@team.Name</option>
+                }
+            </select>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Send</button>
+        </div>
+    </form>
+</div>
+

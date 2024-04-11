@@ -1,0 +1,18 @@
+﻿@model TeamDTO
+@{
+}
+<div class="form-sizing border rounded p-3">
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="teamName" class="form-label">Team name</label>
+            <input class="form-control" type="text" asp-for="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Send</button>
+        </div>
+
+    </form>
+</div>
