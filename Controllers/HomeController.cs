@@ -33,21 +33,13 @@ namespace FootballClub.Controllers
         [HttpPost]
         public IActionResult Create(PlayerDTO player)
         {
-            Console.WriteLine("test");
-            Console.WriteLine(player.TeamId);
-            //Console.WriteLine(player.Team.Id);
-            //JE CROIS QUE LE CODE S'ARRETE A CETTE CONDITION A VERIFIER   !!!!!!
             if (!ModelState.IsValid)
             {
                 return View(player);
             }
 
-            Console.WriteLine("OKKKKKKKKKKKKKKKKKKKKKK - -1 ");
-
             using (DatabaseContext database = new DatabaseContext())
             {
-                Console.WriteLine("OKKKKKKKKKKKKKKKKKKKKKK - 0 ");
-
                 database.Players.Add(new Player { 
                     Firstname = player.Firstname, 
                     Lastname = player.Lastname, 
@@ -55,10 +47,9 @@ namespace FootballClub.Controllers
                     Role = player.Role, 
                     TeamId = player.TeamId
                 });
-                Console.WriteLine("OKKKKKKKKKKKKKKKKKKKKKK - 1 ");
+
                 database.SaveChanges();
             }
-            Console.WriteLine("OKKKKKKKKKKKKKKKKKKKKKK - 1 -2");
 
             return RedirectToAction("Index", "Home");
         }
@@ -85,6 +76,11 @@ namespace FootballClub.Controllers
 
             return RedirectToAction("Index", "Home");
 
+        }
+
+        public IActionResult DisplayTeams()
+        {
+            return View();
         }
 
 
