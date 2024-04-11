@@ -10,6 +10,6 @@ namespace FootballClub.Models
         public string Lastname { get; set; }
         public int Number {  get; set; }
         public string Role { get; set; }
-        public virtual Team? Team { get; set; }
+        public int TeamId { get; set; }
     }
 }

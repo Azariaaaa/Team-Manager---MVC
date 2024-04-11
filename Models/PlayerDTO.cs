@@ -13,6 +13,6 @@ namespace FootballClub.Models
         [Required]
         public string Role { get; set; }
         [Required]
-        public Team Team { get; set; }
+        public int TeamId { get; set; }
     }
 }

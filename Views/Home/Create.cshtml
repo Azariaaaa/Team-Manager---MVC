@@ -14,7 +14,7 @@
             <span asp-validation-for="Firstname" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="playerLastname" class="form-label">Player Lastname</label>
+            <label for="playerLastname" class="form-label">Player lastname</label>
             <input class="form-control" type="text" asp-for="Lastname">
             <span asp-validation-for="Lastname" class="text-danger"></span>
         </div>
@@ -30,10 +30,10 @@
         </div>
         <div class="mb-3">
             <label for="playerTeam" class="form-label">Player team</label>
-            <select class=" form-select" asp-for="Team">
+            <select class="form-select" asp-for="TeamId">
                 @foreach(Team team in teams)
                 {
-                    <option value='@team.Name'>@team.Name</option>
+                    <option value='@team.Id'>@team.Name</option>
                 }
             </select>
         </div>
