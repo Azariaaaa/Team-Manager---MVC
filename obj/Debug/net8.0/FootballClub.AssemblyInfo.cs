@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FootballClub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a58b9cb26a342f2e0b400d72acdd4eb3afdbe8b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0291793983a88dce1471f32df5e2c8845ee33ef5")]
 [assembly: System.Reflection.AssemblyProductAttribute("FootballClub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FootballClub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,14 @@
-﻿@model PlayerTeamDTO
-@*
+﻿@*
 *@
 @{
 }
-<h1>Display Teams : </h1>
+
+@foreach(Team team in Model)
+{
+    <tr>
+        <td>
+            <a asp-controller="Home" asp-action="DisplayTeamByTeamId" asp-route-id="@team.Id" class="btn btn-primary">@team.Name</a>
+        </td>
+    </tr>
+}
+

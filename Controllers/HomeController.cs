@@ -1,6 +1,7 @@
 using FootballClub.Database;
 using FootballClub.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.Entity;
 using System.Diagnostics;
 using static System.Formats.Asn1.AsnWriter;
 
@@ -77,13 +78,24 @@ namespace FootballClub.Controllers
             return RedirectToAction("Index", "Home");
 
         }
-
         public IActionResult DisplayTeams()
         {
-            return View();
+            using (DatabaseContext database = new DatabaseContext())
+            {
+                List<Team> teamList = database.Teams.ToList();
+
+                return View(teamList);
+            }
         }
 
-
+        public IActionResult DisplayTeamByTeamId(int id)
+        {
+            using (DatabaseContext database = new DatabaseContext())
+            {
+                List<Player> playerListByTeamId = database.Players.Where(x => x.TeamId == id).ToList();
+                return View(playerListByTeamId);
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
